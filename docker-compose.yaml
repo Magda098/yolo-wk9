@@ -19,9 +19,8 @@ services:
   client:
     container_name: yolo_client
     restart: always
-    build: 
-      context : client/
-      dockerfile: Dockerfile
+    image: {{ client_image }}
+    stdin_open: true # Keep the terminal running
     ports:
       - 4000:4000
     networks:
@@ -30,9 +29,7 @@ services:
   backend:
     container_name: yolo_backend
     restart: always
-    build: 
-      context : backend/
-      dockerfile: Dockerfile
+    image: {{ backend_image }}
     ports:
       - 3000:3000
     depends_on:
