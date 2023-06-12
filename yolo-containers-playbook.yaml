@@ -22,7 +22,7 @@
 
     - name: Copy docker-compose file
       template:
-        src: /docker-compose.yaml
+        src: ./docker-compose.yaml
         dest: "{{ app_directory }}/docker-compose.yaml"
 
     - name: Start the app
