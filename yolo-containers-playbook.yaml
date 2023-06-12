@@ -1,0 +1,7 @@
+- hosts: all
+  become: true
+  vars:
+    client_image: magdamag/yolo-client:v1.1.0
+    backend_image: magdamag/yolo-backend:v1.1.0
+    app_directory: /opt/yolo
+  
