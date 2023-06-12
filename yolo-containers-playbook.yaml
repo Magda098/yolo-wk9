@@ -4,10 +4,16 @@
     client_image: magdamag/yolo-client:v1.1.0
     backend_image: magdamag/yolo-backend:v1.1.0
     app_directory: /opt/yolo
- tasks:
+  tasks:
     - name: Pull client image
       shell: docker pull magdamag/yolo-client:v1.1.0
       args:
         executable: /bin/bash
+
+    - name: Pull backend image
+      shell: docker pull magdamag/yolo-backend:v1.1.0
+      args:
+        executable: /bin/bash
+
 
     
