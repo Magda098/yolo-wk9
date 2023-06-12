@@ -14,6 +14,16 @@
       shell: docker pull {{ backend_image }}
       args:
         executable: /bin/bash
+    - name: Create app directory
+      ansible.builtin.file:
+        path: "{{ app_directory }}"
+        state: directory
+        mode: '0755'
+
+    - name: Copy docker-compose file
+      template:
+        src: /docker-compose.yaml
+        dest: "{{ app_directory }}/docker-compose.yaml"
 
 
     
